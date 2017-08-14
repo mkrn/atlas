@@ -1,0 +1,5 @@
+baseURL = "/"
+languageCode = "en-gb"
+title = "{TITLE}"
+
+enableRobotsTXT = true
