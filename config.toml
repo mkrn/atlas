@@ -2,4 +2,5 @@ baseURL = "/"
 languageCode = "en-gb"
 title = "{TITLE}"
 
+disableKinds = ["RSS"]
 enableRobotsTXT = true
