@@ -8,8 +8,6 @@
             {{- with .Title }}{{ . }} | {{ end }}{{ .Site.Title -}}
         {{ end }}</title>
 
-        <base href="{{ .Site.BaseURL }}">
-
         {{ if .RSSLink }}
             <link href="{{ .RSSLink }}" title="{{ .Site.Title }}" type="application/rss+xml" rel="alternate">
             <link href="{{ .RSSLink }}" title="{{ .Site.Title }}" type="application/rss+xml" rel="feed">
