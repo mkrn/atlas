@@ -1,3 +1,7 @@
+![Atlas, Hugo Boilerplate](https://atlas.indigotree.co.uk/images/github-banner.png)
+
+![](http://forthebadge.com/images/badges/uses-badges.svg) ![](http://forthebadge.com/images/badges/built-by-developers.svg) ![](http://forthebadge.com/images/badges/gluten-free.svg)
+
 # Atlas
 
 [WIP] Our [Hugo](https://gohugo.io/) starter site.
