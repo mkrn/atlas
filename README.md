@@ -4,7 +4,9 @@
 
 # Atlas
 
-[WIP] Our [Hugo](https://gohugo.io/) starter site.
+The [Hugo](https://gohugo.io/) boilerplate we use for our projects.
+
+**Disclaimer** - This boilerplate has been heavily integrated with [Netlify](https://www.netlify.com/), and therefore many features are specific to the Netlify platform and may not work with other hosting providers.
 
 ## Security Headers
 
