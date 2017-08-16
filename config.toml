@@ -8,7 +8,7 @@ disableAliases = true
 
 # add redirects/headers
 [outputs]
-home = ["HTML", "RSS", "REDIRECTS"]
+home = ["HTML", "RSS", "REDIRECTS", "HEADERS"]
 
 # remove .{ext} from text/netlify
 [mediaTypes."text/netlify"]
@@ -21,3 +21,11 @@ mediatype = "text/netlify"
 baseName = "_redirects"
 isPlainText = true
 notAlternative = true
+
+# add output format for netlify _headers
+[outputFormats.HEADERS]
+mediatype = "text/netlify"
+baseName = "_headers"
+isPlainText = true
+notAlternative = true
+
