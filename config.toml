@@ -4,3 +4,20 @@ title = "{TITLE}"
 
 disableKinds = ["RSS"]
 enableRobotsTXT = true
+disableAliases = true
+
+# add redirects/headers
+[outputs]
+home = ["HTML", "RSS", "REDIRECTS"]
+
+# remove .{ext} from text/netlify
+[mediaTypes."text/netlify"]
+suffix = ""
+delimiter = ""
+
+# add output format for netlify _redirects
+[outputFormats.REDIRECTS]
+mediatype = "text/netlify"
+baseName = "_redirects"
+isPlainText = true
+notAlternative = true
