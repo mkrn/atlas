@@ -44,6 +44,8 @@ gulp.task('sass', () => {
         'src/sass/app.scss'
     ])
     .pipe($.plumber({ errorHandler: onError }))
+    .pipe($.sassLint())
+    .pipe($.sassLint.format())
     .pipe($.sass({ precision: 5 }))
     .pipe($.autoprefixer(['ie >= 10', 'last 2 versions']))
     .pipe($.if(isProduction, $.cssnano({ discardUnused: false, minifyFontValues: false })))
