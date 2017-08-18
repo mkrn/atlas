@@ -27,11 +27,11 @@ gulp.task('server', ['build'], () => {
 });
 
 gulp.task('build', () => {
-    runSequence(['sass', 'js'], 'hugo')
+    runSequence(['sass', 'js', 'fonts'], 'hugo')
 })
 
 gulp.task('build-preview', () => {
-    runSequence(['sass', 'js'], 'hugo-preview')
+    runSequence(['sass', 'js', 'fonts'], 'hugo-preview')
 })
 
 gulp.task('hugo', (cb) => {
@@ -85,3 +85,8 @@ gulp.task('js', () => {
     .pipe($.size({ gzip: true, showFiles: true }))
     .pipe(gulp.dest('static/js'))
 })
+
+gulp.task('fonts', () => {
+    return gulp.src('./src/fonts/**/*.{woff,woff2}')
+        .pipe(gulp.dest('static/fonts'));
+});
