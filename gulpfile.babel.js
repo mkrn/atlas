@@ -27,11 +27,11 @@ gulp.task('server', ['build'], () => {
 });
 
 gulp.task('build', () => {
-    runSequence(['sass', 'js', 'fonts'], 'hugo')
+    runSequence(['sass', 'js', 'fonts', 'images'], 'hugo')
 })
 
 gulp.task('build-preview', () => {
-    runSequence(['sass', 'js', 'fonts'], 'hugo-preview')
+    runSequence(['sass', 'js', 'fonts', 'images'], 'hugo-preview')
 })
 
 gulp.task('hugo', (cb) => {
@@ -89,4 +89,12 @@ gulp.task('js', () => {
 gulp.task('fonts', () => {
     return gulp.src('./src/fonts/**/*.{woff,woff2}')
         .pipe(gulp.dest('static/fonts'));
+});
+
+gulp.task('images', () => {
+    return gulp.src('./src/images/**/*.{png,jpg,jpeg,gif,svg,webp}')
+        .pipe($.newer('static/images'))
+        .pipe($.print())
+        .pipe($.imagemin())
+        .pipe(gulp.dest('static/images'));
 });
