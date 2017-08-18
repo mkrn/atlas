@@ -9,6 +9,10 @@ const $ = gulpLoadPlugins()
 const browserSync = require('browser-sync').create()
 const isProduction = process.env.NODE_ENV === 'production'
 
+const onError = (err) => {
+    console.log(err)
+}
+
 // --
 
 gulp.task('server', ['build'], () => {
@@ -39,6 +43,7 @@ gulp.task('sass', () => {
     return gulp.src([
         'src/sass/app.scss'
     ])
+    .pipe($.plumber({ errorHandler: onError }))
     .pipe($.sass({ precision: 5 }))
     .pipe($.autoprefixer(['ie >= 10', 'last 2 versions']))
     .pipe($.if(isProduction, $.cssnano({ discardUnused: false, minifyFontValues: false })))
@@ -55,6 +60,7 @@ gulp.task('js', () => {
     return gulp.src([
         'src/js/app.js'
     ])
+    .pipe($.plumber({ errorHandler: onError }))
     .pipe($.babel())
     .pipe($.concat('app.js'))
     .pipe($.if(isProduction, $.uglify()))
