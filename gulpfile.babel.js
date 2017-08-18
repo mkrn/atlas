@@ -18,12 +18,12 @@ const onError = (err) => {
 gulp.task('server', ['build'], () => {
     browserSync.init({
         server: {
-            baseDir: "./public"
+            baseDir: 'public'
         }
     })
-    gulp.watch(['./src/sass/**/*.scss'], ['sass'])
-    gulp.watch(['./src/js/**/*.js'], ['js-watch'])
-    gulp.watch(['./archetypes/**/*', './content/**/*', './layouts/**/*', './static/**/*'], ['hugo'])
+    gulp.watch(['src/sass/**/*.scss'], ['sass'])
+    gulp.watch(['src/js/**/*.js'], ['js-watch'])
+    gulp.watch(['archetypes/**/*', 'content/**/*', 'layouts/**/*', 'static/**/*'], ['hugo'])
 });
 
 gulp.task('build', () => {
@@ -87,12 +87,12 @@ gulp.task('js', () => {
 })
 
 gulp.task('fonts', () => {
-    return gulp.src('./src/fonts/**/*.{woff,woff2}')
+    return gulp.src('src/fonts/**/*.{woff,woff2}')
         .pipe(gulp.dest('static/fonts'));
 });
 
 gulp.task('images', () => {
-    return gulp.src('./src/images/**/*.{png,jpg,jpeg,gif,svg,webp}')
+    return gulp.src('src/images/**/*.{png,jpg,jpeg,gif,svg,webp}')
         .pipe($.newer('static/images'))
         .pipe($.print())
         .pipe($.imagemin())
