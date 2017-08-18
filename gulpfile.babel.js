@@ -44,6 +44,8 @@ gulp.task('sass', () => {
         'src/sass/app.scss'
     ])
     .pipe($.plumber({ errorHandler: onError }))
+    .pipe($.newer('static/css/app.css'))
+    .pipe($.print())
     .pipe($.sassLint())
     .pipe($.sassLint.format())
     .pipe($.sass({ precision: 5 }))
@@ -64,6 +66,8 @@ gulp.task('js', () => {
         'src/js/app.js'
     ])
     .pipe($.plumber({ errorHandler: onError }))
+    .pipe($.newer('static/js/app.js'))
+    .pipe($.print())
     .pipe($.babel())
     .pipe($.concat('app.js'))
     .pipe($.if(isProduction, $.uglify()))
