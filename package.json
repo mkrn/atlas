@@ -2,6 +2,8 @@
   "name": "atlas",
   "private": true,
   "scripts": {
+    "build": "gulp build",
+    "build:preview": "gulp build-peview",
     "server": "gulp server"
   },
   "dependencies": {

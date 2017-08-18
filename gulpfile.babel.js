@@ -30,8 +30,19 @@ gulp.task('build', () => {
     runSequence(['sass', 'js'], 'hugo')
 })
 
+gulp.task('build-preview', () => {
+    runSequence(['sass', 'js'], 'hugo-preview')
+})
+
 gulp.task('hugo', (cb) => {
     return spawn('hugo').on('close', (code) => {
+        browserSync.reload()
+        cb()
+    })
+})
+
+gulp.task('hugo-preview', (cb) => {
+    return spawn('hugo', ['--buildDrafts', '--buildFuture']).on('close', (code) => {
         browserSync.reload()
         cb()
     })
