@@ -1,5 +1,5 @@
 [build]
-    command = "hugo"
+    command = "num run build"
     publish = "public"
 
 [build.environment]
@@ -7,3 +7,7 @@
 
 [context.production.environment]
     HUGO_ENV = "production"
+    NODE_ENV = "production"
+
+[context.deploy-preview]
+  command = "npm run build:preview"
