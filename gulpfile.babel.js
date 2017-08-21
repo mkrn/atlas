@@ -35,14 +35,14 @@ gulp.task('build-preview', () => {
 })
 
 gulp.task('hugo', (cb) => {
-    return spawn('hugo').on('close', (code) => {
+    return spawn('hugo', { stdio: 'inherit' }).on('close', (code) => {
         browserSync.reload()
         cb()
     })
 })
 
 gulp.task('hugo-preview', (cb) => {
-    return spawn('hugo', ['--buildDrafts', '--buildFuture']).on('close', (code) => {
+    return spawn('hugo', ['--buildDrafts', '--buildFuture'], { stdio: 'inherit' }).on('close', (code) => {
         browserSync.reload()
         cb()
     })
