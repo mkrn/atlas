@@ -23,7 +23,7 @@ gulp.task('server', ['build'], () => {
     })
     gulp.watch(['src/sass/**/*.scss'], ['sass'])
     gulp.watch(['src/js/**/*.js'], ['js-watch'])
-    gulp.watch(['archetypes/**/*', 'content/**/*', 'layouts/**/*', 'static/**/*'], ['hugo'])
+    gulp.watch(['archetypes/**/*', 'data/**/*', 'content/**/*', 'layouts/**/*', 'static/**/*'], ['hugo'])
 });
 
 gulp.task('build', () => {
