@@ -21,9 +21,9 @@ gulp.task('server', ['build'], () => {
             baseDir: 'public'
         }
     })
-    gulp.watch(['src/sass/**/*.scss'], ['sass'])
-    gulp.watch(['src/js/**/*.js'], ['js-watch'])
-    gulp.watch(['archetypes/**/*', 'data/**/*', 'content/**/*', 'layouts/**/*', 'static/**/*'], ['hugo'])
+    $.watch('src/sass/**/*.scss', () => gulp.start('sass'))
+    $.watch('src/js/**/*.js', () => gulp.start('js-watch'))
+    $.watch(['archetypes/**/*', 'data/**/*', 'content/**/*', 'layouts/**/*', 'static/**/*'], () => gulp.start('hugo'))
 });
 
 gulp.task('build', () => {
