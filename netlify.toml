@@ -10,4 +10,4 @@
     NODE_ENV = "production"
 
 [context.deploy-preview]
-  command = "npm run build:preview"
+    command = "npm run build:preview"
