@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "build": "gulp build",
-    "build:preview": "gulp build-peview",
+    "build:preview": "gulp build-preview",
     "server": "gulp server"
   },
   "dependencies": {
