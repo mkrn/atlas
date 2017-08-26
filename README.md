@@ -60,9 +60,9 @@ Hugo [Aliases](https://gohugo.io/content-management/urls/#aliases) are usually h
 
 ## Netlify CMS
 
-Atlas provides a copy of [NetlifyCMS](https://www.netlifycms.org/) which is a fantastic CMS for JAMstack sites where everything is managed by GIT.
+Atlas provides a copy of [Netlify CMS](https://www.netlifycms.org/) which is a fantastic CMS for JAMstack sites where everything is managed by GIT.
 
-You will need to configure NetlifyCMS to point to your own repo. You can do this within `/static/admin/config.yml` by updating `backend: repo:` with your repository information. Here's an example:
+You will need to configure Netlify CMS to point to your own repo. You can do this within `/static/admin/config.yml` by updating `backend: repo:` with your repository information. Here's an example:
 
 ```
 backend:
@@ -70,11 +70,11 @@ backend:
   repo: indigotree/atlas
 ```
 
-Checkout the [quick start](https://www.netlifycms.org/docs/quick-start/) section on the NetlifyCMS docs for more information.
+Checkout the [quick start](https://www.netlifycms.org/docs/quick-start/) section on the Netlify CMS docs for more information.
 
-### Remove NetlifyCMS
+### Remove Netlify CMS
 
-If NetlifyCMS isn't your thing, you can remove it with:
+If Netlify CMS isn't your thing, you can remove it with:
 
 ```
 npm run cms:delete
