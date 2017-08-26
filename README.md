@@ -58,6 +58,28 @@ This is a Netlify feature. Learn more about [Netlify Redirects](https://www.netl
 
 Hugo [Aliases](https://gohugo.io/content-management/urls/#aliases) are usually handled by `<meta http-equiv="refresh" ...>` tags. These have been disabled within `config.toml` with `disableAliases = true`, and instead are handled by [Netlify Redirects](https://www.netlify.com/docs/redirects/). This is handled automatically and you should continue to add aliases as described in the Hugo documentation.
 
+## Netlify CMS
+
+Atlas provides a copy of [Netlify CMS](https://www.netlifycms.org/) which is a fantastic CMS for JAMstack sites where everything is managed by GIT.
+
+You will need to configure Netlify CMS to point to your own repo. You can do this within `/static/admin/config.yml` by updating `backend: repo:` with your repository information. Here's an example:
+
+```
+backend:
+  name: github
+  repo: indigotree/atlas
+```
+
+Checkout the [quick start](https://www.netlifycms.org/docs/quick-start/) section on the Netlify CMS docs for more information.
+
+### Remove Netlify CMS
+
+If Netlify CMS isn't your thing, you can remove it with:
+
+```
+npm run cms:delete
+```
+
 ## Deploy to Netlify
 
 You can deploy directly to Netlify using this button:

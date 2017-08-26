@@ -4,7 +4,8 @@
   "scripts": {
     "build": "gulp build",
     "build:preview": "gulp build-preview",
-    "server": "gulp server"
+    "server": "gulp server",
+    "cms:delete": "gulp cms-delete"
   },
   "dependencies": {
     "babel-core": "^6.25.0",

@@ -1,6 +1,7 @@
 'use strict'
 
 import gulp from 'gulp'
+import del from 'del'
 import runSequence from 'run-sequence'
 import gulpLoadPlugins from 'gulp-load-plugins'
 import { spawn } from "child_process";
@@ -98,3 +99,7 @@ gulp.task('images', () => {
         .pipe($.imagemin())
         .pipe(gulp.dest('static/images'));
 });
+
+gulp.task('cms-delete', () => {
+    return del(['static/admin'], { dot: true })
+})
