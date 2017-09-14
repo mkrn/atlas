@@ -24,6 +24,7 @@ gulp.task('server', ['build'], () => {
     })
     $.watch('src/sass/**/*.scss', () => gulp.start('sass'))
     $.watch('src/js/**/*.js', () => gulp.start('js-watch'))
+    $.watch('src/images/**/*', () => gulp.start('images'))
     $.watch(['archetypes/**/*', 'data/**/*', 'content/**/*', 'layouts/**/*', 'static/**/*', 'config.toml'], () => gulp.start('hugo'))
 });
 
