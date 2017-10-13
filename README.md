@@ -1,4 +1,4 @@
-![Atlas, Hugo Boilerplate](https://atlas.indigotree.co.uk/images/github-banner.png)
+[![Atlas, Hugo Boilerplate](https://atlas.indigotree.co.uk/images/github-banner.png)](https://github.com/indigotree/atlas)
 
 ![](http://forthebadge.com/images/badges/uses-badges.svg) ![](http://forthebadge.com/images/badges/built-by-developers.svg) ![](http://forthebadge.com/images/badges/gluten-free.svg)
 
