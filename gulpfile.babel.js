@@ -54,10 +54,9 @@ gulp.task('hugo-preview', (cb) => {
 
 gulp.task('sass', () => {
     return gulp.src([
-        'src/sass/app.scss'
+        'src/sass/**/*.scss'
     ])
     .pipe($.plumber({ errorHandler: onError }))
-    .pipe($.newer('static/css/app.css'))
     .pipe($.print())
     .pipe($.sassLint())
     .pipe($.sassLint.format())
@@ -76,10 +75,9 @@ gulp.task('js-watch', ['js'], (cb) => {
 
 gulp.task('js', () => {
     return gulp.src([
-        'src/js/app.js'
+        'src/js/**/*.js'
     ])
     .pipe($.plumber({ errorHandler: onError }))
-    .pipe($.newer('static/js/app.js'))
     .pipe($.print())
     .pipe($.babel())
     .pipe($.concat('app.js'))
