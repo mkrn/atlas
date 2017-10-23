@@ -8,6 +8,8 @@ The [Hugo](https://gohugo.io/) boilerplate we use for our projects.
 
 **Disclaimer** - This boilerplate has been heavily integrated with [Netlify](https://www.netlify.com/), and therefore many features are specific to the Netlify platform and may not work with other hosting providers.
 
+**Disclaimer** - Atlas is a boilerplate (starter kit) for bespoke Hugo projects. It's not a Hugo theme and cannot be placed inside the `/themes` directory. Check the [theme](#themes) docs for more information.
+
 ## Features
 
 Atlas provides the following features out of the box:
@@ -94,6 +96,14 @@ If Netlify CMS isn't your thing, you can remove it with:
 ```
 npm run cms:delete
 ```
+
+## Themes
+
+Atlas is a boilerplate (starter kit) designed to aid bespoke Hugo development. Using existing themes with Atlas is possible, but unsupported.
+
+Atlas files will take priority over your theme due to the order Hugo looks for files. For this reason, you will have to remove most of the files inside `/layouts` with the exception of `_headers`, `_redirects` and `robots.txt`.
+
+If you wish the develop your site as a theme inside Atlas, you can copy `/layouts` into your theme and update the references within the `gulpfile.babel.js`.
 
 ## Deploy to Netlify
 
