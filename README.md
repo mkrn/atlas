@@ -19,6 +19,10 @@ Atlas provides the following features out of the box:
 * [Better defaults](#security-headers) for configuring HTTPS
 * [Better redirects](#redirects) with Netlify instead of `<meta http-equiv="refresh">`
 
+## Prerequisite
+
+Atlas does not include a copy of the `hugo` binary. You will need to [install Hugo](https://gohugo.io/getting-started/installing/) first you can run any of the [commands](#available-commands) mentioned below.
+
 ## Getting Started
 
 To get started, you can either clone the repository, or deploy straight to [Netlify](#deploy-to-netlify). Then run the following from the project root:
