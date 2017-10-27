@@ -4,7 +4,8 @@ import gulp from 'gulp'
 import del from 'del'
 import runSequence from 'run-sequence'
 import gulpLoadPlugins from 'gulp-load-plugins'
-import { spawn } from "child_process";
+import { spawn } from "child_process"
+import tildeImporter from 'node-sass-tilde-importer'
 
 const $ = gulpLoadPlugins()
 const browserSync = require('browser-sync').create()
@@ -60,7 +61,7 @@ gulp.task('sass', () => {
     .pipe($.print())
     .pipe($.sassLint())
     .pipe($.sassLint.format())
-    .pipe($.sass({ precision: 5 }))
+    .pipe($.sass({ precision: 5, importer: tildeImporter }))
     .pipe($.autoprefixer(['ie >= 10', 'last 2 versions']))
     .pipe($.if(isProduction, $.cssnano({ discardUnused: false, minifyFontValues: false })))
     .pipe($.size({ gzip: true, showFiles: true }))
