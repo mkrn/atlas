@@ -21,7 +21,8 @@ gulp.task('server', ['build'], () => {
     browserSync.init({
         server: {
             baseDir: 'public'
-        }
+        },
+        open: false
     })
     $.watch('src/sass/**/*.scss', () => gulp.start('sass'))
     $.watch('src/js/**/*.js', () => gulp.start('js-watch'))
