@@ -18,6 +18,16 @@ const onError = (err) => {
 // --
 
 gulp.task('server', ['build'], () => {
+    gulp.start('init-watch')
+    $.watch(['archetypes/**/*', 'data/**/*', 'content/**/*', 'layouts/**/*', 'static/**/*', 'config.toml'], () => gulp.start('hugo'))
+});
+
+gulp.task('server:with-drafts', ['build-preview'], () => {
+    gulp.start('init-watch')
+    $.watch(['archetypes/**/*', 'data/**/*', 'content/**/*', 'layouts/**/*', 'static/**/*', 'config.toml'], () => gulp.start('hugo-preview'))
+});
+
+gulp.task('init-watch', () => {
     browserSync.init({
         server: {
             baseDir: 'public'
@@ -26,9 +36,8 @@ gulp.task('server', ['build'], () => {
     })
     $.watch('src/sass/**/*.scss', () => gulp.start('sass'))
     $.watch('src/js/**/*.js', () => gulp.start('js-watch'))
-    $.watch('src/images/**/*', () => gulp.start('images'))
-    $.watch(['archetypes/**/*', 'data/**/*', 'content/**/*', 'layouts/**/*', 'static/**/*', 'config.toml'], () => gulp.start('hugo'))
-});
+    $.watch('src/images/**/*', () => gulp.start('images'))  
+})
 
 gulp.task('build', () => {
     runSequence(['sass', 'js', 'fonts', 'images'], 'hugo')
