@@ -103,7 +103,7 @@ gulp.task('fonts', () => {
 });
 
 gulp.task('images', () => {
-    return gulp.src('src/images/**/*.{png,jpg,jpeg,gif,svg,webp}')
+    return gulp.src('src/images/**/*.{png,jpg,jpeg,gif,svg,webp,ico}')
         .pipe($.newer('static/images'))
         .pipe($.print())
         .pipe($.imagemin())
