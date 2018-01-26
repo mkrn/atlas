@@ -40,11 +40,11 @@ gulp.task('init-watch', () => {
 })
 
 gulp.task('build', () => {
-    runSequence(['sass', 'js', 'fonts', 'images'], 'hugo')
+    runSequence(['sass', 'js', 'fonts', 'images', 'pub-delete'], 'hugo')
 })
 
 gulp.task('build-preview', () => {
-    runSequence(['sass', 'js', 'fonts', 'images'], 'hugo-preview')
+    runSequence(['sass', 'js', 'fonts', 'images', 'pub-delete'], 'hugo-preview')
 })
 
 gulp.task('hugo', (cb) => {
@@ -112,4 +112,13 @@ gulp.task('images', () => {
 
 gulp.task('cms-delete', () => {
     return del(['static/admin'], { dot: true })
+})
+
+gulp.task('pub-delete', () => {
+    return del(['public/**', '!public'], {
+      // dryRun: true,
+      dot: true
+    }).then(paths => {
+      console.log('Files and folders deleted:\n', paths.join('\n'), '\nTotal Files Deleted: ' + paths.length + '\n');
+    })
 })
