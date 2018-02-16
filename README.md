@@ -122,9 +122,9 @@ Project Name
 │   │ robots.txt
 │   │
 │   └───_default - Fallback default layouts
-│   │ baseof.html - Wrapper html
-│   │ list.html - default index page layout
-│   │ single.html - default single post/page layout
+│   │   │ baseof.html - Wrapper html
+│   │   │ list.html - default index page layout
+│   │   │ single.html - default single post/page layout
 │   │
 │   └───partials - Template Parts/Blocks
 │       │
