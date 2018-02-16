@@ -105,6 +105,58 @@ Atlas files will take priority over your theme due to the order Hugo looks for f
 
 If you wish the develop your site as a theme inside Atlas, you can copy `/layouts` into your theme and update the references within the `gulpfile.babel.js`.
 
+
+## File Structure
+
+```
+Project Name
+└───archetypes				- Template Front Data for markdown files by type
+│   │	default.md 				- Default Front Data for all markdown
+│   │	posttype.md 			- posttype specific Front Data for markdown (singular version of content posttype folder)
+│   
+└───content					- Site content files for pages and posttypes as markdown files
+│    │   _index.md 				- Homepage content
+│    │   
+│    └───posttype
+│        │   _index.md 		- postype list page content
+│        │   post.md 		- single post content
+│
+└───layouts  				- Site design templates
+│	│	404.html
+│	│	index.html
+│	│	index.headers
+│	│	index.redirects
+│	│	robots.txt
+│   │
+│   └───_default			- Fallback default layouts
+│       │   baseof.html 		- Wrapper html
+│       │   list.html 			- default index page layout
+│       │   single.html 		- default single post/page layout
+│   │
+│   └───posttype			- Posttype layouts
+│       │   baseof.html 		- Wrapper html
+│   │
+│   └───partials			- Template Parts/Blocks
+│       │
+│       └───site			- Main Template Parts/Blocks used in baseof.html etc
+│           │	meta.html
+│           │	header.html
+│           │	footer.html
+│           │	scripts.html
+│           │	styles.html
+│   │
+│   └───shortcodes			- special layouts folder for defining shortcodes
+│	
+.gitignore
+.sass-lint.yml
+LICENSE
+README.md
+config.toml
+gulpfile.babel.js
+netlify.toml
+package.json
+```
+
 ## Deploy to Netlify
 
 You can deploy directly to Netlify using this button:
