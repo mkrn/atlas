@@ -116,11 +116,11 @@ Project Name
 │   
 │
 └───layouts - Site design templates
-│	│	404.html
-│	│	index.html
-│	│	index.headers
-│	│	index.redirects
-│	│	robots.txt
+│	  │ 404.html
+│	  │ index.html
+│	  │ index.headers
+│	  │ index.redirects
+│	  │ robots.txt
 │   │
 │   └───_default - Fallback default layouts
 │       │ baseof.html - Wrapper html
