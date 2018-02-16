@@ -111,9 +111,8 @@ If you wish the develop your site as a theme inside Atlas, you can copy `/layout
 ```
 Project Name
 └───archetypes - Template Front Data for markdown files by type
-│   │	default.md - Default Front Data for all markdown
-│   │	posttype.md - posttype specific Front Data for markdown (singular version of content posttype folder)
-│   
+│   │ default.md - Default Front Data for all markdown
+│   │ posttype.md - posttype specific Front Data for markdown (singular version of content posttype folder)│   
 │
 └───layouts - Site design templates
 │   │ 404.html
