@@ -109,40 +109,39 @@ If you wish the develop your site as a theme inside Atlas, you can copy `/layout
 ## File Structure
 
 ```
-Project Name
-└───archetypes - Template Front Data for markdown files by type
-│   │ default.md - Default Front Data for all markdown
-│   │ posttype.md - posttype specific Front Data for markdown (singular version of content posttype folder)│   
 │
-└───layouts - Site design templates
-│   │ 404.html
-│   │ index.html
-│   │ index.headers
-│   │ index.redirects
-│   │ robots.txt
+└──── /layouts               - Template files
+│   │ 404.html               - 404 Template
+│   │ index.headers          - Custom Netlify HTTP headers
+│   │ index.redirects        - Custom Netlify redirect rules
+│   │ robots.txt             - Template for robots.txt
 │   │
-│   └───_default - Fallback default layouts
-│   │   │ baseof.html - Wrapper html
-│   │   │ list.html - default index page layout
-│   │   │ single.html - default single post/page layout
+│   └──── /_default          - Base templates for list & singular pages
+│   │   │ baseof.html        - Base template
+│   │   │ list.html          - List/taxonomy template
+│   │   │ single.html        - Singular page/post template
 │   │
-│   └───partials - Template Parts/Blocks
+│   └──── /partials          - Partials
 │       │
-│       └───site - Main Template Parts/Blocks used in baseof.html etc
-│           │	meta.html
-│           │	header.html
-│           │	footer.html
-│           │	scripts.html
-│           │	styles.html
-│	
-.gitignore
-.sass-lint.yml
-LICENSE
-README.md
-config.toml
-gulpfile.babel.js
-netlify.toml
-package.json
+│       └──── /site          - Site partials loaded into _default/baseof.html template
+│           │ meta.html      - Site <meta> tags
+│           │ header.html    - Sites primary <header>
+│           │ footer.html    - Sites primary <footer>
+│           │ scripts.html   - JavaScript <script> referenced before closing </body>
+│           │ styles.html    - Stylesheets referenced before closing </head>
+│   │
+│   └──── /static            - Hugo static resources
+│       │
+│       └──── /admin         - Netlify CMS templates
+│
+│ .gitignore
+│ .sass-lint.yml             - Linting rules for sass-lint
+│ LICENSE
+│ README.md
+│ config.toml                - Hugo configuration
+│ gulpfile.babel.js          - Gulp configuration/tasks
+│ netlify.toml               - Netlify configuration
+│ package.json
 ```
 
 ## Deploy to Netlify
