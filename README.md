@@ -105,6 +105,47 @@ Atlas files will take priority over your theme due to the order Hugo looks for f
 
 If you wish the develop your site as a theme inside Atlas, you can copy `/layouts` into your theme and update the references within the `gulpfile.babel.js`.
 
+
+## File Structure
+
+```
+│
+└──── /layouts               - Template files
+│   │ 404.html               - 404 Template
+│   │ index.headers          - Custom Netlify HTTP headers
+│   │ index.redirects        - Custom Netlify redirect rules
+│   │ robots.txt             - Template for robots.txt
+│   │
+│   └──── /_default          - Base templates for list & singular pages
+│   │   │ baseof.html        - Base template
+│   │   │ list.html          - List/taxonomy template
+│   │   │ single.html        - Singular page/post template
+│   │
+│   └──── /partials          - Partials
+│       │
+│       └──── /site          - Site partials loaded into _default/baseof.html template
+│           │ meta.html      - Site <meta> tags
+│           │ header.html    - Sites primary <header>
+│           │ footer.html    - Sites primary <footer>
+│           │ scripts.html   - JavaScript <script> referenced before closing </body>
+│           │ styles.html    - Stylesheets referenced before closing </head>
+│   │
+|   └──── /src               - Source files for assets (SASS, JS, Images, Fonts etc)
+│   │
+│   └──── /static            - Hugo static resources
+│       │
+│       └──── /admin         - Netlify CMS templates
+│
+│ .gitignore
+│ .sass-lint.yml             - Linting rules for sass-lint
+│ LICENSE
+│ README.md
+│ config.toml                - Hugo configuration
+│ gulpfile.babel.js          - Gulp configuration/tasks
+│ netlify.toml               - Netlify configuration
+│ package.json
+```
+
 ## Deploy to Netlify
 
 You can deploy directly to Netlify using this button:
