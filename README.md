@@ -130,6 +130,8 @@ If you wish the develop your site as a theme inside Atlas, you can copy `/layout
 │           │ scripts.html   - JavaScript <script> referenced before closing </body>
 │           │ styles.html    - Stylesheets referenced before closing </head>
 │   │
+|   └──── /src               - Source files for assets (SASS, JS, Images, Fonts etc)
+│   │
 │   └──── /static            - Hugo static resources
 │       │
 │       └──── /admin         - Netlify CMS templates
