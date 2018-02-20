@@ -47,15 +47,25 @@ gulp.task('build-preview', () => {
     runSequence(['sass', 'js', 'fonts', 'images', 'pub-delete'], 'hugo-preview')
 })
 
+
+
 gulp.task('hugo', (cb) => {
-    return spawn('hugo', { stdio: 'inherit' }).on('close', (code) => {
+    let args = process.env.DEPLOY_PRIME_URL ? ['-b', process.env.DEPLOY_PRIME_URL] : [];
+    return spawn('hugo', args, { stdio: 'inherit' }).on('close', (code) => {
         browserSync.reload()
         cb()
     })
 })
 
+
+
 gulp.task('hugo-preview', (cb) => {
-    return spawn('hugo', ['--buildDrafts', '--buildFuture'], { stdio: 'inherit' }).on('close', (code) => {
+    let args = ['--buildDrafts', '--buildFuture'];
+    if (process.env.DEPLOY_PRIME_URL) {
+        args.push('-b')
+        args.push(process.env.DEPLOY_PRIME_URL)
+    }
+    return spawn('hugo', args, { stdio: 'inherit' }).on('close', (code) => {
         browserSync.reload()
         cb()
     })
