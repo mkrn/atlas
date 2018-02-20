@@ -50,7 +50,9 @@ gulp.task('build-preview', () => {
 
 
 gulp.task('hugo', (cb) => {
-    let args = process.env.DEPLOY_PRIME_URL ? ['-b', process.env.DEPLOY_PRIME_URL] : [];
+    let baseUrl = process.env.NODE_ENV === 'production' ? process.env.URL : process.env.DEPLOY_PRIME_URL;
+    let args = baseUrl ? ['-b', baseUrl] : [];
+
     return spawn('hugo', args, { stdio: 'inherit' }).on('close', (code) => {
         browserSync.reload()
         cb()
