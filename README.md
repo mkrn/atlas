@@ -46,6 +46,8 @@ There are 3 commands available:
 
 A default robots.txt can be found at `/layouts/robots.txt` which is configured to disallow crawlers when the `HUGO_ENV` environment variable is **not** set to `"production"`.
 
+The default behaviour is to disallow search engines on "branch" deployments. If you're using split testing, you will need to modify the default robots.txt template to ensure your branch deployments can be indexed.
+
 ## Headers
 
 Headers can be configured within `/layouts/index.headers`, which is then built to `/public/_headers`.
